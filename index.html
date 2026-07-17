@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6c453" />
+    <title>Daylight — Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <a class="brand" href="#" aria-label="Daylight home"><span class="sun">☼</span> daylight</a>
+        <p id="date-label"></p>
+      </header>
+
+      <section class="hero">
+        <p class="eyebrow">MY DAY</p>
+        <h1>Make space for<br />what matters.</h1>
+        <p class="hero-copy">A tiny place to hold your plans, one gentle task at a time.</p>
+      </section>
+
+      <section class="todo-card" aria-label="Todo list">
+        <form id="todo-form" class="new-todo">
+          <input id="todo-input" type="text" maxlength="120" placeholder="What needs your attention?" autocomplete="off" aria-label="New task" required />
+          <button type="submit" aria-label="Add task">+</button>
+        </form>
+
+        <div class="list-toolbar">
+          <span id="task-count">0 tasks</span>
+          <div class="filters" role="group" aria-label="Task filter">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="active">Open</button>
+            <button class="filter" data-filter="done">Done</button>
+          </div>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+        <div id="empty-state" class="empty-state">
+          <span>✦</span>
+          <p>Your day is wide open.</p>
+          <small>Add something small to begin.</small>
+        </div>
+        <button id="clear-completed" class="clear-completed" hidden>Clear completed</button>
+      </section>
+
+      <footer>Made for unhurried days <span>•</span> Your tasks stay on this device.</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
