@@ -1,14 +1,7 @@
-# Daylight Todo
+# Farmly Marketplace Prototype
 
-A lightweight, responsive todo application that saves tasks locally in the browser.
+A responsive, browser-only farmer marketplace. Buyers can browse, search, filter, and add produce to their basket. Farmers can publish a new product listing through **Sell with us**; listings and basket data persist locally in the browser.
 
-## Run it
+## Run
 
-Open `index.html` in any modern browser. No build step or server is required.
-
-## Features
-
-- Add, complete, and delete tasks
-- Filter all, open, and completed tasks
-- Persist tasks with localStorage
-- Clear all completed tasks
+Open `index.html` in any modern browser. No dependencies or server required.

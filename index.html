@@ -3,52 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6c453" />
-    <title>Daylight — Todo List</title>
+    <meta name="theme-color" content="#275b39" />
+    <title>Farmly — Fresh from local farms</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="app-shell">
-      <header>
-        <a class="brand" href="#" aria-label="Daylight home"><span class="sun">☼</span> daylight</a>
-        <p id="date-label"></p>
-      </header>
+    <div class="announcement">🌿 &nbsp;Free delivery on orders over ₹499 <span>•</span> Supporting local growers, one basket at a time.</div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Farmly home"><span class="brand-mark">f</span>farmly</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="#home">Shop</a><a href="#how-it-works">How it works</a><a href="#stories">Farmer stories</a>
+      </nav>
+      <div class="header-actions">
+        <button class="text-button" id="open-seller">Sell with us</button>
+        <button class="cart-button" id="open-cart" aria-label="Open basket"><span class="cart-icon">⌑</span><span>Basket</span><b id="cart-count">0</b></button>
+      </div>
+    </header>
 
+    <main id="home">
       <section class="hero">
-        <p class="eyebrow">MY DAY</p>
-        <h1>Make space for<br />what matters.</h1>
-        <p class="hero-copy">A tiny place to hold your plans, one gentle task at a time.</p>
+        <div class="hero-copy">
+          <p class="eyebrow"><i></i> GROWN CLOSE TO HOME</p>
+          <h1>Good food,<br /><em>grown honestly.</em></h1>
+          <p>Buy seasonal produce directly from the people who grow it. Freshly harvested, fairly priced, and full of flavour.</p>
+          <div class="hero-actions"><a class="button primary" href="#market">Shop the market <span>→</span></a><button class="button subtle" id="hero-seller">Start selling</button></div>
+          <div class="hero-proof"><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="" /></div><span><strong>2,000+ happy tables</strong><br />fed by local farms</span></div>
+        </div>
+        <div class="hero-art"><div class="sun-disc"></div><div class="arch-photo"><img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=85" alt="Farmer harvesting vegetables" /></div><div class="floating-tag tag-top">✦ Picked this morning</div><div class="floating-tag tag-bottom"><span>🥕</span><b>100%<small>local produce</small></b></div></div>
       </section>
 
-      <section class="todo-card" aria-label="Todo list">
-        <form id="todo-form" class="new-todo">
-          <input id="todo-input" type="text" maxlength="120" placeholder="What needs your attention?" autocomplete="off" aria-label="New task" required />
-          <button type="submit" aria-label="Add task">+</button>
-        </form>
+      <section class="benefits" id="how-it-works"><div><span>◎</span><p><b>Picked at peak freshness</b><small>From farm to your doorstep</small></p></div><div><span>♧</span><p><b>Fair for farmers</b><small>They set the price, always</small></p></div><div><span>⌂</span><p><b>Grown nearby</b><small>Know exactly where it came from</small></p></div></section>
 
-        <div class="list-toolbar">
-          <span id="task-count">0 tasks</span>
-          <div class="filters" role="group" aria-label="Task filter">
-            <button class="filter active" data-filter="all">All</button>
-            <button class="filter" data-filter="active">Open</button>
-            <button class="filter" data-filter="done">Done</button>
-          </div>
-        </div>
-
-        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
-        <div id="empty-state" class="empty-state">
-          <span>✦</span>
-          <p>Your day is wide open.</p>
-          <small>Add something small to begin.</small>
-        </div>
-        <button id="clear-completed" class="clear-completed" hidden>Clear completed</button>
+      <section class="market" id="market">
+        <div class="section-heading"><div><p class="eyebrow">THE MARKET</p><h2>Fresh finds, right now.</h2></div><button class="view-all" id="view-all">View all produce <span>→</span></button></div>
+        <div class="market-tools"><div class="search"><span>⌕</span><input id="search" type="search" placeholder="Search for produce or a farmer" aria-label="Search products" /></div><div class="filters" id="filters"><button class="filter active" data-category="All">All</button><button class="filter" data-category="Vegetables">Vegetables</button><button class="filter" data-category="Fruits">Fruits</button><button class="filter" data-category="Dairy">Dairy & eggs</button><button class="filter" data-category="Pantry">Pantry</button></div></div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="empty-products" id="empty-products" hidden>Nothing found here yet. Try another search.</p>
       </section>
 
-      <footer>Made for unhurried days <span>•</span> Your tasks stay on this device.</footer>
+      <section class="seller-banner" id="stories"><div><p class="eyebrow">ARE YOU A GROWER?</p><h2>Your harvest deserves<br />a <em>good home.</em></h2><p>List your produce, set your price, and reach people in your community who care about good food.</p><button class="button cream" id="banner-seller">Become a seller <span>→</span></button></div><div class="seller-image"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=85" alt="Farmer working in a field" /><div class="quote">“Farmly lets me focus on what I love — growing good food.”<small>— Anjali, 3rd generation farmer</small></div></div></section>
     </main>
+    <footer><a class="brand" href="#home"><span class="brand-mark">f</span>farmly</a><p>Better food begins at the farm.</p><span>© 2026 Farmly</span></footer>
+
+    <aside class="drawer" id="cart-drawer" aria-label="Your basket" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">YOUR ORDER</p><h2>Your basket</h2></div><button class="icon-close" data-close="cart-drawer" aria-label="Close">×</button></div><div id="cart-items" class="cart-items"></div><div id="cart-empty" class="cart-empty"><span>⌑</span><p>Your basket is waiting.</p><small>Add something fresh from the market.</small></div><div class="cart-footer"><div><span>Subtotal</span><strong id="cart-total">₹0</strong></div><button class="button primary checkout" id="checkout">Continue to checkout <span>→</span></button></div></aside>
+    <div class="overlay" id="overlay"></div>
+
+    <dialog class="seller-modal" id="seller-modal"><button class="icon-close modal-close" data-close="seller-modal" aria-label="Close">×</button><div class="modal-intro"><p class="eyebrow">SELL ON FARMLY</p><h2>Share your harvest<br />with your community.</h2><p>Fill in your first product listing. It will appear in the market right away.</p><div class="mini-stat"><b>Zero listing fee</b><span>You keep 92% of every sale</span></div></div><form id="product-form"><label>Product name<input name="name" required maxlength="42" placeholder="e.g. Heirloom tomatoes" /></label><div class="form-row"><label>Price (₹)<input name="price" required type="number" min="1" placeholder="120" /></label><label>Unit<input name="unit" required maxlength="15" placeholder="per kg" /></label></div><label>Category<select name="category"><option>Vegetables</option><option>Fruits</option><option>Dairy</option><option>Pantry</option></select></label><label>Your farm name<input name="farm" required maxlength="35" placeholder="e.g. Green Acre Farm" /></label><label>Photo URL <small>(optional)</small><input name="image" type="url" placeholder="https://images..." /></label><button class="button primary submit-product" type="submit">Publish product <span>→</span></button></form></dialog>
+    <div class="toast" id="toast" role="status"></div>
     <script src="app.js"></script>
   </body>
 </html>
